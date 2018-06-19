@@ -39,16 +39,11 @@ namespace DanteCryingBot
                 var fileToSend = await bot.SendTextMessageAsync(cid, String.Join(System.Environment.NewLine, arrayOfPossibleNames));
             }
 
-            if (txt.Contains("VEGETA"))
-            {
-                var fileToSend = await bot.SendTextMessageAsync(cid, arrayOfQuotes[6]);
-            }
-
             if (txt.Contains("CELL"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, arrayOfQuotes[5]);
             }
-            if (txt.Contains("BACK ME UP BOT"))
+            if (txt.Contains("BACK ME UP BOT") || txt.Contains("FUCK YOU"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, arrayOfQuotes[11]);
             }
@@ -89,6 +84,20 @@ namespace DanteCryingBot
                     var fileToSend = await bot.SendPhotoAsync(cid, stream, "Time to go out with a YANG!");
                 }
             }
+            if (txt.Contains("BARDOCK"))
+            {
+                using (Stream stream = System.IO.File.OpenRead("Bardock.jpg"))
+                {
+                    var fileToSend = await bot.SendPhotoAsync(cid, stream, "I'll be sure to visit your grave!");
+                }
+            }
+            if (txt.Contains("VEGETA"))
+            {
+                using (Stream stream = System.IO.File.OpenRead("Vegeta.jpg"))
+                {
+                    var fileToSend = await bot.SendPhotoAsync(cid, stream, arrayOfQuotes[6]);
+                }
+            }
             if (txt.Contains("WOW"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "That's INSANE!");
@@ -101,9 +110,31 @@ namespace DanteCryingBot
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "No u");
             }
-
-
-
+            if (txt.Contains("GOOD JOB"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Thanks!");
+            }
+            if (txt.Contains("SHH"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "sorry");
+            }
+            if (txt.Contains("MAN I'M BORED"))
+            {
+                var fileToSend = await bot.SendGameAsync(cid, @"RPSSimulator");
+            }
+            if(txt.Contains("THANKS BOT"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "No problem!");
+            }
+            if ( txt.Contains("YOU'R DOING GREAT BOT!"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Thanks dad!");
+            }
+            if(txt.Contains("NO U"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "No u");
+            }
+            
         }
     }
 }
