@@ -60,7 +60,21 @@ namespace DanteCryingBot
                     "My bot will fuck your wife",
                     "booty",
                     "FATHER",
-                    "/Names"
+                    "/Names",
+                    "Back me up bot",
+                    "Fuck you",
+                    "Gamers rise up",
+                    "Wow",
+                    "Shut up",
+                    "Good Job",
+                    "shh",
+                    "Man I'm bored",
+                    "Thanks Bot",
+                    "You'r doing great bot!",
+                    "no u",
+                    "Hello Bot",
+                    "I love you bot",
+                    "Marry me bot"
 
                 };
 
@@ -77,7 +91,7 @@ namespace DanteCryingBot
                     "Kanji"
                 };
 
-                MessageDifferentiation.messagePicker(text, bot, cid, rnd, arrayOfQuotes, arrayOfPossiblePhrases, arrayOfPossibleNames);
+                MessageDifferentiation.messagePicker(text, bot, cid, rnd, arrayOfQuotes, arrayOfPossiblePhrases, arrayOfPossibleNames, name);
             }
         }
     }

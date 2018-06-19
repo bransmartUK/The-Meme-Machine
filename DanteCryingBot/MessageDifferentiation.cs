@@ -10,7 +10,7 @@ namespace DanteCryingBot
 {
     class MessageDifferentiation
     {
-        public static async void messagePicker(string txt, TelegramBotClient bot, long cid, Random rnd, string[] arrayOfQuotes, string[] arrayOfPossiblePhrases, string[] arrayOfPossibleNames)
+        public static async void messagePicker(string txt, TelegramBotClient bot, long cid, Random rnd, string[] arrayOfQuotes, string[] arrayOfPossiblePhrases, string[] arrayOfPossibleNames, string name)
         {
             txt = txt.ToUpper();
             if (txt.Contains("I NEED YOUR HELP BOT") || txt.Contains("BEAT THIS DUDE UP") ||
@@ -63,7 +63,14 @@ namespace DanteCryingBot
             {
                 using (Stream stream = System.IO.File.OpenRead("Ruby.jpg"))
                 {
-                    var fileToSend = await bot.SendPhotoAsync(cid, stream, "I wont lose to anyone! EVER!");
+                    if(name.Contains("Ana") || name.Contains("Tamir"))
+                    {
+                        var fileToSendOff = await bot.SendTextMessageAsync(cid, "I wont lose to anyone! EVER!");
+                    } else
+                    {
+                        var fileToSend = await bot.SendPhotoAsync(cid, stream, "I wont lose to anyone! EVER!");
+                    }
+                    
                 }
             }
             if (txt.Contains("NU 13"))
@@ -74,28 +81,56 @@ namespace DanteCryingBot
             {
                 using (Stream stream = System.IO.File.OpenRead("Blake.jpg"))
                 {
-                    var fileToSend = await bot.SendPhotoAsync(cid, stream, "Deadly NIGHTSHADE!");
+                    if (name.Contains("Ana") || name.Contains("Tamir"))
+                    {
+                        var fileToSendOff = await bot.SendTextMessageAsync(cid, "Deadly NIGHTSHADE!");
+                    } else
+                    {
+                        var fileToSend = await bot.SendPhotoAsync(cid, stream, "Deadly NIGHTSHADE!");
+                    }
+                    
                 }
             }
             if (txt.Contains("YANG"))
             {
                 using (Stream stream = System.IO.File.OpenRead("Yang.jpg"))
                 {
-                    var fileToSend = await bot.SendPhotoAsync(cid, stream, "Time to go out with a YANG!");
+                    if (name.Contains("Ana") || name.Contains("Tamir"))
+                    {
+                        var fileToSendOff = await bot.SendTextMessageAsync(cid, "Time to go out with a YANG!");
+                    } else
+                    {
+                        var fileToSend = await bot.SendPhotoAsync(cid, stream, "Time to go out with a YANG!");
+                    }
+                    
                 }
             }
             if (txt.Contains("BARDOCK"))
             {
                 using (Stream stream = System.IO.File.OpenRead("Bardock.jpg"))
                 {
-                    var fileToSend = await bot.SendPhotoAsync(cid, stream, "I'll be sure to visit your grave!");
+                    if (name.Contains("Ana") || name.Contains("Tamir"))
+                    {
+                        var fileToSendOff = await bot.SendTextMessageAsync(cid, "I'll be sure to visit your grave!");
+                    } else
+                    {
+                        var fileToSend = await bot.SendPhotoAsync(cid, stream, "I'll be sure to visit your grave!");
+                    }
+                    
                 }
             }
             if (txt.Contains("VEGETA"))
             {
                 using (Stream stream = System.IO.File.OpenRead("Vegeta.jpg"))
                 {
-                    var fileToSend = await bot.SendPhotoAsync(cid, stream, arrayOfQuotes[6]);
+                    if (name.Contains("Ana") || name.Contains("Tamir"))
+                    {
+                        var fileToSendOff = await bot.SendTextMessageAsync(cid, arrayOfQuotes[6]);
+                    } else
+                    {
+                        var fileToSend = await bot.SendPhotoAsync(cid, stream, arrayOfQuotes[6]);
+                    }
+                    
                 }
             }
             if (txt.Contains("WOW"))
@@ -122,17 +157,29 @@ namespace DanteCryingBot
             {
                 var fileToSend = await bot.SendGameAsync(cid, @"RPSSimulator");
             }
-            if(txt.Contains("THANKS BOT"))
+            if (txt.Contains("THANKS BOT"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "No problem!");
             }
-            if ( txt.Contains("YOU'R DOING GREAT BOT!"))
+            if (txt.Contains("YOU'R DOING GREAT BOT!"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "Thanks dad!");
             }
-            if(txt.Contains("NO U"))
+            if (txt.Contains("NO U"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "No u");
+            }
+            if (txt.Contains("HELLO BOT"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Hello " + name);
+            }
+            if (txt.Contains("I LOVE YOU BOT") || txt.Contains("LOVE YOU BOT"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "I love you too my dear, " + name);
+            }
+            if(txt.Contains("MARRY ME BOT"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Give me a time and place, " + name + "! I'd love too.");
             }
             
         }
