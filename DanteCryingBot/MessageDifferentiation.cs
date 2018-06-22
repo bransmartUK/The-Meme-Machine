@@ -165,7 +165,7 @@ namespace DanteCryingBot
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "Thanks dad!");
             }
-            if (txt.Contains("NO U"))
+            if (txt.Contains("NO U") || txt.Contains("BOT YOU'RE SO COOL"))
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "No u");
             }
@@ -181,7 +181,20 @@ namespace DanteCryingBot
             {
                 var fileToSend = await bot.SendTextMessageAsync(cid, "Give me a time and place, " + name + "! I'd love too.");
             }
-            
+            if (txt.Contains("HEY BOT"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Somebody called?");
+            }
+            if (txt.Contains("ME!"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Hi me, i'm bot!");
+            }
+            if(txt.Contains("NICE TO MEET YOU BOT"))
+            {
+                var fileToSend = await bot.SendTextMessageAsync(cid, "Same to you too" + name + "!");
+            }
+
+
         }
     }
 }
